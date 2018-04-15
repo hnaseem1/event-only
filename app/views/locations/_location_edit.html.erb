@@ -1,2 +1,10 @@
-<h1>Editing <%= link_to location.name, location_path(location) %></h1>
-<%= render 'location_form', location: location %>
+<% if location[1] == "index" %>
+
+  <%= render 'location_form', location: location[0] %>
+
+<% elsif location[1] == "edit" %>
+
+  <h1>Editing <%= link_to location[0].name, location_path(location[0]) %></h1>
+  <%= render 'location_form', location: location[0] %>
+
+<% end %>

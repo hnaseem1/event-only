@@ -1,6 +1,9 @@
+<% array = [] %>
+
 <% @locations.each do |current_location| %>
-  <%= render 'single_location', location: current_location %>
-  <%= render 'location_edit', location: current_location %>
+  <% array = [current_location, "index"] %>
+  <%= render 'single_location', location: array[0] %>
+  <%= render 'location_edit', location: array %>
 <% end %>
 
 <p>
